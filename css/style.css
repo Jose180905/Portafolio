@@ -1,3 +1,20 @@
+:root {
+    --bg: #121212;
+    --bg-light: #1e1e1e;
+    --bg-hero-1: #1f1f1f;
+    --bg-hero-2: #333;
+    --text: #fff;
+    --text-muted: #ccc;
+    --text-soft: #aaa;
+    --accent: #f39c12;
+    --accent-hover: #e08e0b;
+    --radius: 12px;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --shadow-strong: rgba(0, 0, 0, 0.7);
+    --transition: 0.3s;
+    --max-width: 1000px;
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 * {
     box-sizing: border-box;
@@ -6,14 +23,14 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #fff;
+    font-family: var(--font);
+    background-color: var(--bg);
+    color: var(--text);
     line-height: 1.6;
 }
 
 a {
-    color: #f39c12;
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -22,33 +39,32 @@ a:hover {
 }
 
 .hero {
-    background: linear-gradient(135deg, #1f1f1f, #333);
+    background: linear-gradient(135deg, var(--bg-hero-1), var(--bg-hero-2));
     padding: 5rem 2rem;
     text-align: center;
 }
 
 .hero h1 {
     font-size: 3rem;
-    color: #f39c12;
+    color: var(--accent);
     margin-bottom: 0.5rem;
 }
 
 .hero p {
     font-size: 1.2rem;
-    color: #ccc;
+    color: var(--text-muted);
 }
-
 
 section {
     padding: 3rem 2rem;
-    max-width: 1000px;
+    max-width: var(--max-width);
     margin: auto;
 }
 
 section h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #f39c12;
+    color: var(--accent);
     text-align: center;
 }
 
@@ -56,7 +72,7 @@ section h2 {
 .contact p {
     text-align: center;
     font-size: 1rem;
-    color: #aaa;
+    color: var(--text-soft);
 }
 
 .projects-grid {
@@ -67,33 +83,33 @@ section h2 {
 }
 
 .project-card {
-    background: #1e1e1e;
-    border-radius: 12px;
+    background: var(--bg-light);
+    border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 20px var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.7);
+    box-shadow: 0 12px 25px var(--shadow-strong);
 }
 
 .project-card img {
     width: 100%;
-    height: 150px; 
+    height: 150px;
     object-fit: contain;
     background: #111;
 }
 
 .project-card h3 {
     margin: 0.5rem 1rem 0;
-    color: #f39c12;
+    color: var(--accent);
 }
 
 .project-card p {
     margin: 0.3rem 1rem;
-    color: #ccc;
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 
@@ -101,22 +117,22 @@ section h2 {
     display: inline-block;
     margin: 0.5rem 1rem 1rem 1rem;
     padding: 0.5rem 1rem;
-    background: #f39c12;
+    background: var(--accent);
     color: #111;
     border-radius: 6px;
     font-weight: 700;
-    transition: 0.3s;
+    transition: var(--transition);
 }
 
 .project-card a:hover {
-    background: #e08e0b;
+    background: var(--accent-hover);
 }
 
 footer {
     text-align: center;
     padding: 2rem;
-    background: #1f1f1f;
-    color: #aaa;
+    background: var(--bg-hero-1);
+    color: var(--text-soft);
 }
 
 @media (max-width: 768px) {
@@ -133,3 +149,15 @@ footer {
     }
 }
 
+.about p {
+    max-width: 850px;
+    margin: 1.2rem auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-soft);
+    padding: 1.2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+}
